@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  ellis-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ellis-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./escola.db:/app/escola.db
+    restart: unless-stopped
+    # Se precisar de variáveis de ambiente, adicione aqui:
+    # environment:
+    #   - VAR=valor
